@@ -1,0 +1,15 @@
+{
+  "name": "book-review",
+  "version": "1.0.0",
+  "description": "\"App to share book reviews\"",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.4.5"
+  }
+}
