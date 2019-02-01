@@ -1,52 +1,109 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
 
-  body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
+main {
+  flex: 1 0 auto;
+}
+
+/*spinner*/
+.spinner {
+  width: 40px;
+  height: 40px;
+  background-color: #fadf44;
+
+  position: absolute;
+  top: 48%;
+  left: 48%;
+  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+  animation: sk-rotateplane 1.2s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-rotateplane {
+  0% {
+    -webkit-transform: perspective(120px)
   }
 
-  main {
-    flex: 1 0 auto;
+  50% {
+    -webkit-transform: perspective(120px) rotateY(180deg)
   }
-      /*spinner*/
-      .spinner {
-        width: 40px;
-        height: 40px;
-        background-color: #fadf44;
-      
-        position: absolute;
-        top: 48%;
-        left: 48%;
-        -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
-        animation: sk-rotateplane 1.2s infinite ease-in-out;
-      }
-      
-      @-webkit-keyframes sk-rotateplane {
-        0% { -webkit-transform: perspective(120px) }
-        50% { -webkit-transform: perspective(120px) rotateY(180deg) }
-        100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
-      }
-      
-      @keyframes sk-rotateplane {
-        0% { 
-          transform: perspective(120px) rotateX(0deg) rotateY(0deg);
-          -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
-        } 50% { 
-          transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
-          -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
-        } 100% { 
-          transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-          -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-        }
-      }
-      .spinner-wrapper {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #22179c;
-        z-index: 999999;
-        }
-        
-        
+
+  100% {
+    -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg)
+  }
+}
+
+@keyframes sk-rotateplane {
+  0% {
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)
+  }
+
+  50% {
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+  }
+
+  100% {
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}
+
+.spinner-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #22179c;
+  z-index: 999999;
+}
+
+.nav-wrapper .fa-bars {
+  font-size: 40px;
+}
+
+.nav-wrapper .log,
+.stories,
+.name {
+  font-size: 18px;
+}
+
+/*floating button
+
+
+.fixed-action-btn {
+
+  margin-bottom: 11%;
+  margin-right: 10%;
+}
+
+.btn-floating.btn-large {
+  width: 80px;
+  height: 80px;
+}
+
+.btn-floating.btn-large i {
+  line-height: 80px;
+}
+
+.btn-large i {
+  font-size: 2.5rem;
+}
+*/
+
+.story-text{
+height: 120px;
+
+}
+
+.dash-status{
+  text-transform: capitalize;
+}
+
+#delete-form{
+  display: inline;
+}
