@@ -61,7 +61,7 @@ router.get('/show/:id', (req, res) => {
         });
 });
 
-//list stories from single user
+//list post from single user
 router.get('/user/:userId', (req, res) => {
     Story.find({
             user: req.params.userId,
@@ -91,13 +91,13 @@ router.get('/my', ensureAuthenticated, (req, res) => {
 
 
 
-// Add Story Form
+// Add  Form
 router.get('/add', ensureAuthenticated, (req, res) => {
     res.render('stories/add');
 });
 
 
-// edit Story Form
+// edit  Form
 router.get('/edit/:id', ensureAuthenticated, (req, res) => {
     Story.findOne({
             _id: req.params.id
@@ -115,7 +115,7 @@ router.get('/edit/:id', ensureAuthenticated, (req, res) => {
 
 });
 
-// Process Add Story
+// Process Add 
 router.post('/', (req, res) => {
     let allowComments;
 
@@ -133,7 +133,7 @@ router.post('/', (req, res) => {
         user: req.user.id
     }
 
-    // Create Story
+    // Create post
     new Story(newStory)
         .save()
         .then(story => {
